@@ -6,7 +6,7 @@ Pi-shaped Workshop – Docker & Kubernetes
 
 ## Objectives
 
-- Create a simple Node.js REST API (`Hello, World!`)
+- Create a simple Node.js REST API (`Hello, World!`) 
 - Write a Dockerfile to containerize the app
 - Build and tag a Docker image
 - Run the container locally on port `8080`
