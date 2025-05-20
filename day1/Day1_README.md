@@ -6,93 +6,38 @@ Pi-shaped Workshop – Docker & Kubernetes
 
 ## Objectives
 
-- Create a simple Node.js REST API (`Hello, World!`)
+- Create a simple Node.js REST API (`Hello, World!`) 
 - Write a Dockerfile to containerize the app
 - Build and tag a Docker image
-- Run the container locally on port `8080`
+- Run the container locally on port `8080`  
 - Push the image to Docker Hub
-
-
-## Running Locally
-
-### 1. Build Docker image
-
-```bash
-docker build -t sourav773/hello-docker-node:day1 .
-```
-
-### 2. Run Docker container
-
-```bash
-docker run -p 8080:8080 sourav773/hello-docker-node:day1
-```
-
-Visit: [http://localhost:8080](http://localhost:8080)
-
-### 3. Push image to Docker Hub
-
-```bash
-docker login
-docker push sourav773/hello-docker-node:day1
-```
-
-> Note: You must have a Docker Hub account and be logged in to push images.
-
----
-
-## Docker Hub Image Link
-
-[https://hub.docker.com/r/sourav773/hello-docker-node]
-
----
 
 ## Core Concept Questions
 
 ### Why is Docker useful in building and deploying microservices?
 
-Docker enables each microservice to run in its own container with all of its dependencies. This ensures consistent behavior across development, testing, and production environments. It simplifies scaling, isolates services for easier debugging and maintenance, and allows independent updates or rollbacks of individual services.
+Docker helps package each microservice with everything it needs to run, making it portable and consistent across environments. It speeds up development, testing, and deployment, and makes it easy to scale and manage services independently.
 
 ---
 
 ### What is the difference between a Docker image and a container?
 
-- A **Docker image** is a read-only blueprint that contains the application and its environment.
-- A **container** is a running instance of that image.
+A Docker image is like a template or snapshot of your app, including its code and dependencies.
 
-In scaling a web application, multiple containers are launched from the same image to distribute traffic and load.
+A container is the actual running instance created from that image.
 
 ---
 
 ### How does Kubernetes complement Docker at scale?
 
-Kubernetes orchestrates and manages Docker containers across multiple hosts. It handles:
+KKubernetes is a powerful tool that automates how Docker containers are run and managed. It can:
 
-- Container deployment and scaling
-- Load balancing and service discovery
-- Auto-restart of failed containers (self-healing)
-- Rolling updates and zero-downtime deployment
+Automatically start or stop containers as needed
 
-It ensures applications remain highly available and scalable in production.
+Distribute traffic across containers
 
+Recover failed containers
+
+Perform updates without downtime
 ---
 
-### Note on Docker Hub
-
-To push Docker images to Docker Hub:
-
-1. Create a [Docker Hub account](https://hub.docker.com)
-2. Log in via CLI with:
-
-```bash
-docker login
-```
-
-3. Then push your tagged image with:
-
-```bash
-docker push dockerhubusername/image-name:tag
-```
-
-You must be authenticated to push to your own repository.
-
----
