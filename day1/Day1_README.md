@@ -8,7 +8,7 @@ Pi-shaped Workshop – Docker & Kubernetes
 
 - Create a simple Node.js REST API (`Hello, World!`) 
 - Write a Dockerfile to containerize the app
-- Build and tag a Docker image
+- Build and tag a Docker image 
 - Run the container locally on port `8080`  
 - Push the image to Docker Hub
 
