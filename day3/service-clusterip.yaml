@@ -1,0 +1,14 @@
+cat <<EOF > service-clusterip.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-clusterip
+spec:
+  selector:
+    app: my-app
+  ports:
+    - port: 80
+      targetPort: 80
+EOF
+
+kubectl apply -f service-clusterip.yaml
