@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-affinity-pod
+spec:
+  containers:
+  - name: hello-container
+    image: sourav773/hello-docker-node:day1
+    ports:
+    - containerPort: 8080
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - worker-node-1
+  tolerations:
+  - key: "workload"
+    operator: "Equal"
+    value: "demo"
+    effect: "NoSchedule"
