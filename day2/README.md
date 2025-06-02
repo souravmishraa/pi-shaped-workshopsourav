@@ -9,7 +9,7 @@ File: `deployment.yaml` contains:
 
 ###  Verification
 
-After applying:
+After applying: 
 
 ```bash
 kubectl apply -f deployment.yaml
