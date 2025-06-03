@@ -6,7 +6,7 @@
  Configured liveness and readiness probes for both services to ensure reliability.
  Integrated HPA to auto-scale backend based on CPU utilization.
 
-# Performance & Cost Considerations
+# Performance & Cost Considerations 
  Used resource limits to avoid over-provisioning.
  Set up HPA to optimize pod count based on real usage – helps during peak traffic.
  Probes prevent routing to unhealthy pods, improving reliability.
